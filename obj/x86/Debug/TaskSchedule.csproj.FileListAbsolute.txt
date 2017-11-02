@@ -3,3 +3,8 @@ E:\github\TaskSchedule\bin\Debug\TaskSchedule.pdb
 E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.exe
 E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.pdb
 E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.csprojResolveAssemblyReference.cache
+E:\github\TaskScheduleDemo\obj\x86\Debug\TaskSchedule.exe
+E:\github\TaskScheduleDemo\obj\x86\Debug\TaskSchedule.pdb
+E:\github\TaskScheduleDemo\bin\Debug\TaskSchedule.exe
+E:\github\TaskScheduleDemo\bin\Debug\TaskSchedule.pdb
+E:\github\TaskScheduleDemo\obj\x86\Debug\TaskSchedule.csprojResolveAssemblyReference.cache

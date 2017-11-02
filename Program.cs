@@ -18,19 +18,14 @@ namespace TaskSchedule
             //任务调度算法
             //定义汽车组
             List<string> cars = new List<string>();
-            XmlNodeList carList = xml.SelectNodes("Root/Cars/Car");
-
-            cars.Add("大货车");
-            cars.Add("小货车");
-            cars.Add("轿车");
-            cars.Add("三轮车");
-            cars.Add("摩托车");
-            cars.Add("电动自行车");
-            cars.Add("摩拜");
-            cars.Add("ofo");
-            foreach (string car in cars)
+            XmlNodeList nodeList = xml.SelectNodes("Root/Cars/Car");
+            if (nodeList != null)
             {
-                res += car + ",";
+                foreach (XmlNode node in nodeList)
+                {
+                    cars.Add(node.InnerText);
+                    res += node.InnerText + ",";
+                }
             }
             res = res.TrimEnd(',');
 
@@ -38,30 +33,43 @@ namespace TaskSchedule
             //定义一个司机组
             Dictionary<string, string> drivers = new Dictionary<string, string>();
             Dictionary<string, string> backupdrivers = new Dictionary<string, string>();
-            drivers.Add("司机1","轿车");
-            drivers.Add("司机2", "摩托车");
-            drivers.Add("司机3", "自行车");
-            drivers.Add("司机4", "小货车");
-            drivers.Add("司机5", "轿车");
-            drivers.Add("司机6", "大货车");
-            drivers.Add("司机7", "ofo");
-            foreach (var driver in drivers)
+            nodeList = xml.SelectNodes("Root/Drivers/Driver");
+            if (nodeList != null)
             {
-                res += driver.Key + ","+driver.Value+";";
-                backupdrivers.Add(driver.Key,driver.Value);
+                foreach (XmlNode node in nodeList)
+                {
+                    res += node.Attributes["key"].InnerText + "," + node.Attributes["value"].InnerText + ";";
+                    drivers.Add(node.Attributes["key"].InnerText, node.Attributes["value"].InnerText);
+                    backupdrivers.Add(node.Attributes["key"].InnerText, node.Attributes["value"].InnerText);
+                }
             }
             res = res.TrimEnd(',');
             res += "\n";
 
-
             //定义一个任务组
             res += "\n任务列表：";
             Dictionary<string, List<string>> tasks = new Dictionary<string, List<string>>();
-            tasks.Add("任务1", new List<string> { "大货车","自行车","ofo" });
-            tasks.Add("任务2", new List<string> { "ofo" });
-            tasks.Add("任务3", new List<string> { "轿车","摩托车" });
-            tasks.Add("任务4", new List<string> { "自行车", "摩托车","ofo","轿车" });
-            tasks.Add("任务5", new List<string> { "摩托车"});
+            nodeList = xml.SelectNodes("Root/Tasks/Task");
+            if (nodeList != null)
+            {
+                foreach (XmlNode node in nodeList)
+                {
+                    res += node.Attributes["key"].InnerText + "{" ;
+                    List<string> carNames = new List<string>();
+                    if (node.HasChildNodes)
+                    {
+                        foreach (XmlNode childNode in node.ChildNodes)
+                        {
+                            res += childNode.InnerText + ",";
+                            carNames.Add(childNode.InnerText);
+                        }
+                    }
+                    res = res.TrimEnd(',');
+                    res += "}\n";
+                    tasks.Add(node.Attributes["key"].InnerText,carNames);
+                }
+            }
+            
             foreach (var task in tasks)
             {
                 res += task.Key + "{";
