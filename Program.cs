@@ -68,18 +68,7 @@ namespace TaskSchedule
                     res += "}\n";
                     tasks.Add(node.Attributes["key"].InnerText,carNames);
                 }
-            }
-            
-            foreach (var task in tasks)
-            {
-                res += task.Key + "{";
-                foreach(var name in task.Value)
-                {
-                    res += name + ",";
-                }
-                res = res.TrimEnd(',');
-                res += "}\n";
-            }
+            }                      
             res = res.TrimEnd(',');
             res += "\n";
 

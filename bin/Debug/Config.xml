@@ -17,7 +17,7 @@
 		<Driver key="司机4" value="小货车"></Driver>
 		<Driver key="司机5" value="轿车"></Driver>
 		<Driver key="司机6" value="大货车"></Driver>
-		<Driver key="低级7" value="ofo"></Driver>
+		<Driver key="司机7" value="ofo"></Driver>
 	</Drivers>
 	<Tasks>
 		<Task key="任务1">

@@ -8,3 +8,5 @@
 #过滤文件夹Debug,Release,obj  
 bin/
 obj/  
+TaskSchedule.suo
+TaskSchedule.suo
