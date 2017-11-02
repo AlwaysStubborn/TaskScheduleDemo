@@ -11,13 +11,13 @@
 		<Car>ofo</Car>
 	</Cars>
 	<Drivers>
-		<Driver key="司机1" value="轿车"></Driver>
-		<Driver key="司机2" value="摩托车"></Driver>
-		<Driver key="司机3" value="自行车"></Driver>
-		<Driver key="司机4" value="小货车"></Driver>
-		<Driver key="司机5" value="轿车"></Driver>
-		<Driver key="司机6" value="大货车"></Driver>
-		<Driver key="司机7" value="ofo"></Driver>
+		<Driver key="司机1" value="轿车"/>
+		<Driver key="司机2" value="摩托车"/>
+		<Driver key="司机3" value="自行车"/>
+		<Driver key="司机4" value="自行车"/>
+		<Driver key="司机5" value="轿车"/>
+		<Driver key="司机6" value="大货车"/>
+		<Driver key="司机7" value="ofo"/>
 	</Drivers>
 	<Tasks>
 		<Task key="任务1">
@@ -29,7 +29,7 @@
 			<Driver>ofo</Driver>
 		</Task>
 		<Task key="任务3">
-			<Driver>轿车</Driver>
+			<Driver>自行车</Driver>
 			<Driver>摩托车</Driver>
 		</Task>
 		<Task key="任务4">
