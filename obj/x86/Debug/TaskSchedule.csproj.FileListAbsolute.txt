@@ -1,0 +1,5 @@
+E:\github\TaskSchedule\bin\Debug\TaskSchedule.exe
+E:\github\TaskSchedule\bin\Debug\TaskSchedule.pdb
+E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.exe
+E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.pdb
+E:\github\TaskSchedule\obj\x86\Debug\TaskSchedule.csprojResolveAssemblyReference.cache
