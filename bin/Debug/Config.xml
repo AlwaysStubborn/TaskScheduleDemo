@@ -26,20 +26,16 @@
 			<Driver>ofo</Driver>
 		</Task>
 		<Task key="任务2">
+			<Driver>自行车</Driver>
 			<Driver>ofo</Driver>
 		</Task>
 		<Task key="任务3">
 			<Driver>自行车</Driver>
-			<Driver>摩托车</Driver>
+			<Driver>大货车</Driver>
 		</Task>
 		<Task key="任务4">
-			<Driver>自行车</Driver>
-			<Driver>摩托车</Driver>
+			<Driver>大货车</Driver>
 			<Driver>ofo</Driver>
-			<Driver>轿车</Driver>
-		</Task>
-		<Task key="任务5">
-			<Driver>摩托车</Driver>
 		</Task>
 	</Tasks>
 </Root>

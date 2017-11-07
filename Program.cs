@@ -244,11 +244,34 @@ namespace TaskSchedule
             res += "\n";
             //定义一个任务和司机的对应组
             Dictionary<string, List<string>> taskDriversNotContailRepeat = new Dictionary<string, List<string>>();
+            foreach(var task in tasks)
+            {
+                taskDriversNotContailRepeat.Add(task.Key,new List<string>());
+            }
 
             //遍历司机
             foreach (var driver in drivers)
-            { 
-                
+            {
+                string car = driver.Value;
+                //判断这个车型最适合分配给那个任务
+                foreach (var task in tasks)
+                {
+                    //不包含就继续循环
+                    if (!task.Value.Contains(car))
+                    {
+                        continue;
+                    }
+                    //如果该任务已经添加过了相应的车型就不再加了
+                    if (taskDriversNotContailRepeat[task.Key].Contains(car))
+                    {
+                        continue;
+                    }
+                    //包含的情况下需要计算最匹配的任务，匹配有问题的，最短长度满足不了要求
+
+
+                    //最终匹配到的情况下，添加到相应的任务里
+                    taskDriversNotContailRepeat[task.Key].Add(driver.Key);
+                }
             }
         }
     }
